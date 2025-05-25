@@ -1,7 +1,9 @@
-# print(3 < 2)
-# print(true + 3)
-# print(type(true))
-# print(false + 3)
+x = 3
+y = 3
+print(x != y)
 
-# print(false ==1)
+print(type(True))
 
+print(False + 3)
+
+print(bool(1110))

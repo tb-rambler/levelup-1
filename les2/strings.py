@@ -1,9 +1,9 @@
 val = 'строка'
-val2 = 'другая строка'
+val2 = 'другая стрOка'
 print(val.upper()) # метод делает заглавные буквы
 print(val.lower()) # метод делает строчные буквы
-print(val.capitalize())  # метод делает заглавные первые буквы
-print(val2.title())
-print(val2.isalpha())
-print(val.isnumeric()) # проверяет только числа
-print(val.isalnum()) 
+print(val2.capitalize())  # метод делает заглавные первую букву
+print(val2.title())  # метод делает заглавные ВСЕ первые буквы
+print(val2.isalpha()) # состоит ли строка только из букв
+print(val.isnumeric()) # содержит ли строка только числовые символы (если проверять только  цифры (0-9) - используется isdigit())
+print(val.isalnum()) # проверяет строка - только из букв и цифр
