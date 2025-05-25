@@ -57,7 +57,7 @@ else:
 
 year = int(input('введите год \t'))
 
-if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+if (year % 4 == 0 or year % 400 == 0) and (year % 100 != 0):
    print('високосный год')
 else:
    print('обычный год')
