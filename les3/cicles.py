@@ -16,6 +16,22 @@
 #    print(f'Привет, {name}!')
 # print('Программа завершена')
 
+
+# Моржовый оператор позволяет нам как присваивать значение переменной, так и возвращать это значение в одном и том же выражении. Он дает возможность присвоить переменные в выражении, включая переменные, которых еще не существует
+# print(num := 15)
+# print(num = 15) - выдаст ошибку TypeError
+
+value = input('please enter something: \n')
+while value != '':
+   print('Nice!')
+   value = input('please enter something: \n')
+
+# Or:
+
+while value := input('please enter something: \n') != '':
+   print('Nice!')
+
+
 # while (name := input('введите имя: ')) != 'стоп':
 #    print(f'Привет, {name}!')
 # print('Программа завершена')
@@ -58,6 +74,8 @@
 #    if i != 'o':
 #       print(i)
 
+# разница прерывания break и continue
+
 for i in range(1, 11):
    if i == 5:
       break
@@ -68,5 +86,5 @@ for num in range(1, 6):
       continue
    print(num)
 
-for _ in range(100): # что-то не значащее, нигде далее исп-ся не будет
+for _ in range(30): # что-то не значащее, нигде далее исп-ся не будет
    print('hello!')

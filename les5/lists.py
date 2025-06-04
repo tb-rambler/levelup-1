@@ -1,27 +1,37 @@
-# number = [10, 20, 30]
+# Коллекции СПИСОК (любые типы данных в одном флаконе, объеденены одним нужным нам свойством, параметром)
+# в отличие от строк, списки - это изменяемые коллекции, у них можно изменить 1 элемент, добавить, удалить
+# 
+# number = [10, 20, 30] # список - в [] скобках через ","
 # print(number)
-# print(type(number))
+# print(type(number)) # тип - список
 
 # mix = [10, 'text', 30.3]
 # print(mix)
 # print(type(mix))
 
-# numbers = [10, 20, 30, 40, 50]
-# print(numbers[0])  # срезы
-# print(numbers[-1])
-# print(numbers[1:3])
-# print(numbers[::-1])
+ # срезы списка по индексам
 
 # numbers = [10, 20, 30, 40, 50]
-# numbers[2] = 50
+# print(numbers[0])  # срез по индексу 0
+# print(numbers[-1])  # срез по последнему с конца индексу
+# print(numbers[1:3]) # срез от 2 до 3 элемента (не включительно)
+# print(numbers[::-1]) # срез в обратном порядке 
+
+
+# изменяем часть списка:
+
+# numbers = [10, 20, 30, 40, 50]
+# numbers[2] = 50 # 3-й элемент списка стал = 50
 # print(numbers)
 
 # numbers = [10, 20, 30, 40, 50]
-# numbers.append(60) # добавить в конце 60
+# numbers.append(60) # добавить в конце элемент 60
 # print(numbers)
+
 
 # 10 раз ввести цифры с клавы и сделать из них список
-# numbers = []
+
+# numbers = [] # создать пустой список
 # for i in range(10):
 #    numbers.append(int(input()))
 # print(numbers)
@@ -30,49 +40,57 @@
 # del numbers[-1] # удаление из списка элемента
 # print(numbers)
 
-# del numbers[::2]
+# del numbers[::2] # удалить из списка каждое число шагом 2
 # print(numbers)
 
-# присутствует ли элемент в списке (очень медленно)
-#  x in list_name
-print(1 in [2,3,4,5,1]) # 1 есть в списке
+# Методы работы со списками
 
-# x not in list_name
-print(1 not in [2,3,4,5,1]) 
+# присутствует ли элемент в списке (очень медленно, в больших списках нужно дробить на части)
+#  x in list_name
+# print(1 in [2,3,4,5,1]) # 1 есть в списке (возвращает true)
+
+# # x not in list_name
+# print(1 not in [2,3,4,5,1]) # 1 нет в списке (возвращает false)
+
 
 # списки можно сложить, умножить
 
-s = [1,2]
-t = [3,40,50]
-print(s+t)
-print(s*5) # 5 раз повторим
+# s = [1,2]
+# t = [3,40,50]
+# print(s+t) # сложили в 1 список
+# print(s*5) # 5 раз повторим список s
 
-print(len(t)) # длина списка
+# print(len(t)) # длина списка
 
-print(min(t)) # min зачение в списке
-print(max(t)) # max зачение в списке
+# print(min(t)) # min зачение в списке
+# print(max(t)) # max зачение в списке
 
-print(t.index(50)) # возвращает индекс элемента в списке
+# print(t.index(50)) # возвращает индекс 1го найденного элемента в списке
 
-numbers = [1, 1, 1, 2, 3, 4 ,5]
-print(numbers.count(1)) # посчитать кол-во "1" в списке
+# numbers = [1, 1, 1, 2, 3, 4 ,5]
+# print(numbers.count(1)) # посчитать кол-во "1" в списке
 
-# удалить список (очистить список), но оставить условия
-print(numbers.clear())
+# # очистить список от элементов (освободить память), но оставить условия
+# print(numbers.clear()) # будет пустой список, но он существует
 
 numbers = [1, 1, 1, 2, 3, 4 ,5]
 
 numbers2 = numbers.copy() # сделать копию списка
 print(numbers)
 print(numbers2)
+numbers2.append('new_element') # добавить эл-т к 2му списку
+print(numbers2)
+
+numbers2 = numbers # это не копия, а 2 ссылки на 1 место в памяти
+numbers2.append('new_element')
+print(numbers)
+print(numbers2)
+
+print(numbers is numbers2) # проверяет являются ли списки разными в памяти
+print(numbers == numbers2) # находятся в разных местах памяти но идентичны
 
 print(id(numbers)) # посмотреть место в памяти
-
-numbers2 = numbers
-numbers2.append('new_element')
-
-print(numbers is numbers2) # 2 одинаковых списка в памяти
-print(numbers == numbers2) # находятся в разных местах памяти
+print(id(numbers2))
 
 
 # a = [1,2,3]
