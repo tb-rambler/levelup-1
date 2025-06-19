@@ -84,16 +84,22 @@
 
 # Ввод стран с клавы и добавление в словарь, подсчет кол-ва ввода (простой способ)
 
-countries = dict()
-country = input()
-str_number = 0
+# countries = dict()
+# country = input()
+# str_number = 0
 
-while country != 'стоп':
+# while country != 'стоп':
 
-   countries[country] = countries.get(country, []) + [str_number] # вместо ошибки получаем новое значение
+#    countries[country] = countries.get(country, []) + [str_number] # вместо ошибки получаем новое значение
 
-   str_number += 1
-   country = input()
+#    str_number += 1
+#    country = input()
 
-for country in countries:
-   print(f'{country}: {countries[country]}')
+# for country in countries:
+#    print(f'{country}: {countries[country]}')
+
+
+str_1 = "Ну тут какая то строка"
+d = {"a":[1], "b": [2], "c": [3]}
+print(d.get("a", []) + [str_1]) 
+print(d['b'])
