@@ -99,7 +99,49 @@
 #    print(f'{country}: {countries[country]}')
 
 
-str_1 = "Ну тут какая то строка"
-d = {"a":[1], "b": [2], "c": [3]}
-print(d.get("a", []) + [str_1]) 
-print(d['b'])
+# str_1 = "Ну тут какая то строка"
+# d = {"a":[1], "b": [2], "c": [3]}
+# print(d.get("a", []) + [str_1]) 
+# print(d['b'])
+
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+# Получение значения по ключу
+value = my_dict.get('b')  # value будет 2
+value_default = my_dict.get('d', 0) # value_default будет 0
+print(f"Значение по ключу 'b': {value}, значение по ключу 'd': {value_default}")
+
+# Получение пар ключ-значение
+items = my_dict.items() # items будет view object
+print(f"Элементы словаря: {list(items)}") # Преобразование в список для наглядности
+
+# Получение ключей
+keys = my_dict.keys() # keys будет view object
+print(f"Ключи словаря: {list(keys)}")
+
+# Удаление элемента
+removed_value = my_dict.pop('b') # удален элемент {'c': 3, 'a': 1}
+print(f"Удаленное значение: {removed_value}, словарь после удаления: {my_dict}")
+
+# Удаление случайного элемента
+try:
+    popped_item = my_dict.popitem()
+    print(f"Удаленный элемент: {popped_item}, словарь после удаления: {my_dict}")
+except KeyError:
+    print("Словарь пуст")
+
+# Добавление или обновление элемента
+my_dict.setdefault('d', 4) # {'a': 1, 'd': 4}
+my_dict.setdefault('a', 5) # {'a': 1, 'd': 4} - 'a' уже существует
+print(f"Словарь после setdefault: {my_dict}")
+
+# Обновление словаря
+new_dict = {'b': 2, 'e': 5}
+my_dict.update(new_dict) # {'a': 1, 'd': 4, 'b': 2, 'e': 5}
+print(f"Словарь после обновления: {my_dict}")
+
+# Получение значений
+values = my_dict.values() # values будет view object
+print(f"Значения словаря: {list(values)}")
