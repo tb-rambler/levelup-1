@@ -45,9 +45,72 @@
 
 # функции высшего порядка
 
-def only_pos(x): # критерий отбора 
-   return x > 0 
+# def only_pos(x): # критерий отбора 
+#    return x > 0 
 
-result = filter(only_pos, [-1, 5, 7, 10, 0, -11])
+# result = filter(only_pos, [-1, 5, 7, 10, 0, -11])
+# # print(list(result)) # вариант вывода
+# print(', '.join(str(x) for x in result))
+
+# вытащить только буквы
+
+# result = filter(str.isalpha, '12345ABCDefgh()#%$$^@@')
+# print(''.join(result))
+
+# функция принимает число и возвращает его квадрат
+
+# def square(x):
+#    return x ** 2
+
+# result = map(square, range(5))
+# print(', '.join(str(x) for x in result))
+
+# result = map(str.lower, ['asdDFGH', 'FGHJgf', 'IJger'])
+# print('\n'.join(result))
+
+
+# ввести с клавы сразу список станд. функцими
+
+# numbers = list(map(int, input().split())) # по умолчанию по пробелу
+# print(numbers)
+
+
+# для небольших функций и одноразовых исп-ся лямбда-функция
+
+# lambda x: x > 0
+
+# аналог lambda вот этого:
+# def only_pos(x): # критерий отбора 
+#    return x > 0 
+
+# result = map(lambda x: x > 0, [-1, 5, 7, 10, 0, -11])
 # print(list(result)) # вариант вывода
+
+
+# критерии сортировки по ключу
+
+# lines = ['abcd', '1fsD', 'abc', 'abcdef'] # отсортировать по длине строки
+# print(sorted(lines)) # не верное, по кодировке
+
+# print(sorted(lines, key=lambda line: len(line))) # верно
+
+
+# lines = ['abcd', '1fsD', 'abc', 'abcdef', 'cba']
+# print(sorted(lines, key=lambda line: (len(line), line))) # сортировка 1 по длне, 2 - по алфавиту, если длина одинаковая
+# print(sorted(lines, key=lambda line: (-len(line), line))) # обратный порядок
+
+# # найти самую длинную, а если их неск, то по алфавиту
+# lines = ['abcd', '1fsD', 'abc', 'abcdef', 'cbalkh']
+# print(min(lines, key=lambda line: (-len(line), line)))
+
+
+# вот так проще отсеивать положит. числа:
+result = (x for x in [-1, 5, 6, -10, 0] if x > 0)
 print(', '.join(str(x) for x in result))
+
+
+# сложение всех чисел в послед-ти:
+from functools import reduce
+
+numbeers = range(1, 6)
+print(reduce(lambda x, y: x + y, numbeers))

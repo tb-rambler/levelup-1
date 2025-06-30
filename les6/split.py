@@ -9,7 +9,7 @@ fruits = data.split(',') # разделение строки по заданно
 print(fruits)
 
 data = 'apple, banana,      orange,plum'
-fruits = data.split(',', 1) # разделение строки по разделителю rjk-dj hfp
+fruits = data.split(',', 1) # разделение строки по разделителю кол-во раз
 print(fruits)
 
 # Метод JOIN соединяет в одну строку 
