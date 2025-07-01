@@ -26,6 +26,16 @@
 # matrix = [[int(x) for x in input().split()] for i in range(5)]
 # print(matrix)
 
+matrix = []
+for i in range(5):
+    line = input() #"1 2 4 5 3"
+    list_line = line.split()#['1', '2', '4', '5', '3']
+    new_list = []
+    for j in list_line:
+        new_list.append(int(j))
+    matrix.append(new_list)
+print(matrix)
+
 
 # cоздание 2х мерного списка, 
 # zeros = [[0] *5] * 5
@@ -65,6 +75,6 @@
 # print(getsizeof(numbers_list))
 
 # засечь время исполнения задачи
-from timeit import timeit
-print(round(timeit("s = '; '.join(str(x) for x in range(10**7))", number = 10), 3)) # итератор (должен работать быстрее)
-print(round(timeit("s = '; '.join([str(x) for x in range(10**7)])", number = 10), 3)) # списки (их можно обойти через генератор)
+# from timeit import timeit
+# print(round(timeit("s = '; '.join(str(x) for x in range(10**7))", number = 10), 3)) # итератор (должен работать быстрее)
+# print(round(timeit("s = '; '.join([str(x) for x in range(10**7)])", number = 10), 3)) # списки (их можно обойти через генератор)

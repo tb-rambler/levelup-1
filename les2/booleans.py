@@ -29,6 +29,11 @@ print(x != y)
 
 print(type(True))
 
-print(False + 3)
+print(False + 3) # False + 3 = 0+3 = 3
+print(True + 5) # True + 5 = 1+5 = 6
 
-print(bool(1110))
+print(bool(1110)) 
+
+# Функция bool() преобразует любое значение в True или False по правилам:
+   # Ложные (False) значения: 0, 0.0, "", None, [], (), {}, set()
+   # Все остальные числа, строки, коллекции дают True.

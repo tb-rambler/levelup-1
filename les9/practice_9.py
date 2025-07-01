@@ -34,7 +34,9 @@ flat = [num for row in matrix for num in row]
 # sum(matrix, []) # очень просто , сложение внутри списка всех эл-тов
 print(flat)
 
+
 # 6 Cловарь слово - длина слова 
+
 dictr = ['apple', 'banana', 'kiwi']
 len_word = {word: len(word) for word in dictr}
 print(len_word)

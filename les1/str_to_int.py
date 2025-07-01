@@ -12,7 +12,7 @@ x = str(x)
 print(x)
 print(type(x))
 
-x = '60'
+x = '60' # строка
 print(x)
-x *= 10
+x *= 10 # 10 раз повторит строку 60
 print(x)
