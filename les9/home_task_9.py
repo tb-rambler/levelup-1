@@ -63,7 +63,14 @@ print(set(words_upd))
 
 #  10. Генератор квадратов числе до миллиона
 
+generators = (x ** 2 for x in range(1, 10))
+for x in generators: 
+   print(x)
+
+
 #  11. Построчная фильтрация логов через генератор. Фильтр на ERROR
+
+
 
 #  12. Генератор чисел кратных 3 и 5
 
@@ -73,6 +80,32 @@ print(set(words_upd))
 
 #  15. Создание матрицы 3×3, заполненной нулями
 
+matrix = [[0] * 3] * 3
+print(matrix)
+
 #  16. Сумма элементов в каждом ряду матрицы
 
+import random
+
+matrix = [[random.randint(1, 10) for i in range(5)] for i in range(5)]
+
+print('\nМатрица:')
+for row in matrix:
+   print(row)
+
+row_sum = [sum(row) for row in matrix]
+print('сумма по ряду: ', row_sum)
+
+
 #  17. Создание шахматной доски из 0 и 1
+
+chess =[]
+
+for row in range(8):
+   line = []
+   for col in range(8):
+      line.append((row + col) % 2)
+   chess.append(line)
+
+for line in chess:
+   print(' '.join(str(el) for el in line))

@@ -23,25 +23,25 @@
 
 # Матрица 5х5
 
-# matrix = [[int(x) for x in input().split()] for i in range(5)]
-# print(matrix)
-
-matrix = []
-for i in range(5):
-    line = input() #"1 2 4 5 3"
-    list_line = line.split()#['1', '2', '4', '5', '3']
-    new_list = []
-    for j in list_line:
-        new_list.append(int(j))
-    matrix.append(new_list)
+matrix = [[int(x) for x in input().split()] for i in range(5)]
 print(matrix)
+
+# matrix = []
+# for i in range(5):
+#     line = input() #"1 2 4 5 3"
+#     list_line = line.split()#['1', '2', '4', '5', '3']
+#     new_list = []
+#     for j in list_line:
+#         new_list.append(int(j))
+#     matrix.append(new_list)
+# print(matrix)
 
 
 # cоздание 2х мерного списка, 
-# zeros = [[0] *5] * 5
-# print(zeros)
-# zeros[0][0] = 1
-# print(zeros)
+zeros = [[0] *5] * 5
+print(zeros)
+zeros[0][0] = 1
+print(zeros)
 
 # zeros = [[0] *5 for i in range(5)] # правильно \без ошибок,
 # print(zeros)

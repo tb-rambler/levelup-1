@@ -16,7 +16,7 @@ print(word)
 # 3 квадраты нечетных чисел
 
 lists = [1, 5, 8, 6, 57, 61, 22, 45, 0]
-qwadro = [x **2 for x in lists if x % 2 !=0]
+qwadro = [x ** 2 for x in lists if x % 2 !=0]
 print(qwadro)
 
 
@@ -31,7 +31,8 @@ print(list)
 
 matrix = [[1, 2], [3, 4], [5, 6]]
 flat = [num for row in matrix for num in row]
-# sum(matrix, []) # очень просто , сложение внутри списка всех эл-тов
+# sum(matrix, []) # очень просто, сложение внутри списка всех эл-тов Берётся начальный список []
+# К нему добавляются остальные по очереди
 print(flat)
 
 
