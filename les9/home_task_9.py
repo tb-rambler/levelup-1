@@ -55,10 +55,16 @@ words = ["Hello", "world", "HELLO", "World", "python"]
 
 words_upd = [word.lower() for word in words]
 
-print(set(words_upd))
+print(set(words_upd)) # set - это мн-во уникальных эл-тов
 
 
 #  9. Генерация пар i,j где i!=j [(0, 1), (0, 2), (1, 0), (2,0), (2, 1)] (если range(3))
+
+pari = []
+
+pari = [(i, j) for i in range(0, 3) for j in range(0, 3) if i !=j]
+
+print(pari)
 
 
 #  10. Генератор квадратов числе до миллиона
@@ -70,11 +76,33 @@ for x in generators:
 
 #  11. Построчная фильтрация логов через генератор. Фильтр на ERROR
 
+def errors(logs):
+
+   for line in logs:
+      if 'ERROR' in line:
+         yield line
+
 
 
 #  12. Генератор чисел кратных 3 и 5
 
+def gen_3_5(val):
+   for x in range(1, val + 1):
+      if x % 3 == 0 and x % 5 == 0:
+         yield x 
+    
+gen = gen_3_5(100)
+
+
+
 #  13. Генератор всех слов длиной > 4 из текста "This is a demonstration of how generator expressions work in Python"
+
+text = "This is a demonstration of how generator expressions work in Python"
+
+words_4 = (word for word in text.split() if len(word) >= 4)
+
+print(list(words_4))
+
 
 #  14. Генератор координат сетки (x, y) 0–9 - (0, 0), (0, 1), ...,
 
@@ -82,6 +110,7 @@ for x in generators:
 
 matrix = [[0] * 3] * 3
 print(matrix)
+
 
 #  16. Сумма элементов в каждом ряду матрицы
 
