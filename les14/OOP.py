@@ -7,67 +7,67 @@
 # Это процедурный тип программирования (громоздкий)
 # для создания модели пока мы умеем использовать словари:
 
-def create_car(color, consumption, tank_volume, mileage=0): # по умолчанию у всех машин пробег 0
-    return {'color':color, 
-            'consumption':consumption, 
-            'tank_volume':tank_volume,
-            'reserve':tank_volume, # резерв будет меняться, а V бака - нет
-             'mileage': mileage,
-             "engine_on":False} # по умолчанию у всех машин двигатель выключен
+# def create_car(color, consumption, tank_volume, mileage=0): # по умолчанию у всех машин пробег 0
+#     return {'color':color, 
+#             'consumption':consumption, 
+#             'tank_volume':tank_volume,
+#             'reserve':tank_volume, # резерв (запас топлива) будет меняться, а V бака - нет
+#              'mileage': mileage,
+#              "engine_on":False} # по умолчанию у всех машин двигатель выключен
 
-def start_engine(car): # функция запуска двигателя 
-    if not car['engine_on'] and car['reserve'] > 0: # при резерве топлива >0 и при выкл. двигателе
-        car['engine_on'] = True
-        return "Двигатель запущен"
-    return "Двигатель уже был запущен или нет топлива"
+# def start_engine(car): # функция запуска двигателя 
+#     if not car['engine_on'] and car['reserve'] > 0: # при резерве топлива >0 и при выкл. двигателе
+#         car['engine_on'] = True
+#         return "Двигатель запущен"
+#     return "Двигатель уже был запущен или нет топлива"
 
-def stop_engine(car):  # функция остановки двигателя
-    if car['engine_on']:
-        car['engine_on'] = False
-        return "Двигатель остановлен"
-    return "Двигатель уже был остановлен"
+# def stop_engine(car):  # функция остановки двигателя
+#     if car['engine_on']:
+#         car['engine_on'] = False
+#         return "Двигатель остановлен"
+#     return "Двигатель уже был остановлен"
 
-def drive(car, distance):  # функция езды на N km
-    if not car['engine_on']:   # при условии вкл. двигателя и достаточ. запасе топлива
-        return "Двигатель не запущен"
-    if car['reserve'] / car['consumption'] * 100 < distance:
-        return "Малый запас топлива"
+# def drive(car, distance):  # функция езды на N km
+#     if not car['engine_on']:   # при условии вкл. двигателя и достаточ. запасе топлива
+#         return "Двигатель не запущен"
+#     if car['reserve'] / car['consumption'] * 100 < distance:
+#         return "Малый запас топлива"
     
-    car['mileage'] += distance  # добавляем сколько проехали
-    car['reserve'] -= distance / 100 * car['consumption']   # вычитаем сколько потратили топлива
-    return f"Проехали {distance} км. Остаток топлива: {car['reserve']} л."
+#     car['mileage'] += distance  # добавляем сколько проехали
+#     car['reserve'] -= distance / 100 * car['consumption']   # вычитаем сколько потратили топлива
+#     return f"Проехали {distance} км. Остаток топлива: {car['reserve']} л."
 
-def refuel(car):  # дозаправка
-    car['reserve'] = car['tank_volume']  # после заправки объем = полному баку
-    return "Бак заправлен полностью!"
+# def refuel(car):  # дозаправка
+#     car['reserve'] = car['tank_volume']  # после заправки объем = полному баку
+#     return "Бак заправлен полностью!"
 
-def get_mileage(car):  # функция пробег автомобиля
-    return f"Пробег {car['mileage']} км."
+# def get_mileage(car):  # функция пробег автомобиля
+#     return f"Пробег {car['mileage']} км."
 
-def get_reserve(car):   # функция остаток топлива
-    return f'Запас топлива {car['reserve']} л.'
+# def get_reserve(car):   # функция остаток топлива
+#     return f'Запас топлива {car['reserve']} л.'
 
-#  создаем машины, запускаем наши функции и смотрим что они возвращают
+# #  создаем машины, запускаем наши функции и смотрим что они возвращают
 
-car_1 = create_car(color='black', consumption=10, tank_volume=55)
+# car_1 = create_car(color='black', consumption=10, tank_volume=55)
 
-print(start_engine(car_1)) # заведи двигатель
-print(drive(car_1, 100))  # проедь на 100 км
-print(drive(car_1, 100))  # проедь еще 100 км
-print(drive(car_1, 100))  # проедь еще 100 км
-print(drive(car_1, 300))  # проехать 300 км уже не можем
-print(get_mileage(car_1))  # смотрим пробег
-print(get_reserve(car_1))  # смотрим остаток топлива
-print(refuel(car_1))       # заправляем до полного
-print(drive(car_1, 300))   # проедь еще 300 км
-print(stop_engine(car_1))  # заглуши двигатель
-print(drive(car_1, 100))   # поехать с выкл. двигателем не можем
-
-
-print(type(1))  # тип int - это класс
+# print(start_engine(car_1)) # заведи двигатель
+# print(drive(car_1, 100))  # проедь на 100 км
+# print(drive(car_1, 100))  # проедь еще 100 км
+# print(drive(car_1, 100))  # проедь еще 100 км
+# print(drive(car_1, 300))  # проехать 300 км уже не можем
+# print(get_mileage(car_1))  # смотрим пробег
+# print(get_reserve(car_1))  # смотрим остаток топлива
+# print(refuel(car_1))       # заправляем до полного
+# print(drive(car_1, 300))   # проедь еще 300 км
+# print(stop_engine(car_1))  # заглуши двигатель
+# print(drive(car_1, 100))   # поехать с выкл. двигателем не можем
 
 
-# class <ИмяКласса>:  синтаксис создания класса, всегда с большой буквы
+# print(type(1))  # тип int - это класс
+
+
+# class <ИмяКласса>:  синтаксис создания класса, всегда с большой буквы без подчеркиваний
 #     <описание класса>
 
 # синтаксис создания атрибутов (свойств или признаков объекта)
@@ -83,7 +83,7 @@ print(type(1))  # тип int - это класс
 
 class Car:
     
-   def __init__(self, color, consumption, tank_volume, mileage=0): # инициализация объектов класса (задание аргументов)
+   def __init__(self, color, consumption, tank_volume, mileage=0): # инициализация всех атрибутов класса (задание аргументов)
         self.color = color  # объявление аргументов
         self.consumption = consumption
         self.tank_volume = tank_volume
